@@ -11,7 +11,10 @@ You will need django to be installed in you computer to run this app. Head over 
 
 Once you have downloaded django, go to todoApp directory and run the following command
 
+
+
 ```bash
+$ pip insatll django
 $ python manage.py makemigrations
 ```
 
@@ -30,4 +33,27 @@ $ python manage.py runserver
 
 Once the server is hosted, head over to http://127.0.0.1:8000/todos for the App.
 
-Cheers and Happy Coding :)
+Host on server  
+```bash
+$ python manage.py runserver 0.0.0.0:3000
+
+or run in background
+
+$ nohup python manage.py runserver 0.0.0.0:3000 & 
+
+### NOTE setting.py ALLOWED_HOSTS = [] // 'IP or *'
+```
+Deploy on with Docker file
+
+create docker file
+
+```bash
+$ sudo docker build . -t django-app
+
+$ sudo docker run -p 3000:3000 < container_id >
+
+$ sudo docker run -d -p 3000:3000 <container_id > # with deamon and background run 
+
+```
+
+
